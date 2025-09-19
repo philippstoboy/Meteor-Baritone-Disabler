@@ -1,0 +1,29 @@
+plugins {
+    id 'fabric-loom' version '1.7.4'   // safe pick
+    id 'java'
+}
+
+group = 'your.pkg'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.meteordev.org/releases' }   // <-- Meteor repo
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.1"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.17.2"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.116.6+1.21.1"
+
+    // We only need Meteor's classes at compile-time for the mixin target:
+    modCompileOnly "meteordevelopment:meteor-client:0.5.8"
+}
+
+loom { splitEnvironmentSourceSets() }
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+    withSourcesJar()
+}

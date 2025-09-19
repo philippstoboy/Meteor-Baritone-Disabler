@@ -1,0 +1,9 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "your.pkg",
+  "client": [
+    "MeteorNoBaritoneMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

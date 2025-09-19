@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "meteor_nobaritone",
+  "version": "1.0.0",
+  "name": "Meteor No-Baritone Compat",
+  "description": "Disables Meteor's Baritone path manager so Meteor and AltoClef can run together.",
+  "environment": "client",
+  "mixins": [
+    "quickfix.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.1",
+    "fabric": "*",
+    "meteor-client": "*"
+  }
+}
